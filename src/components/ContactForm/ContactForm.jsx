@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addContact } from "redux/operations";
 import { toast } from 'react-toastify';
+import Button from '@mui/material';
 import css from './ContactForm.module.css';
 import { getContacts } from "redux/selectors";
 
@@ -78,10 +79,9 @@ export const ContactForm = ({onSubmit}) => {
             required
           />
         </label>
-
-        <button type="submit" className={css.buttonEditor}>
+        <Button variant="contained" color="success" type="submit" className={css.buttonEditor}>
           Add contact
-        </button>
+          </Button>
       </form>
     );
 }
