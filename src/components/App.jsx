@@ -9,11 +9,11 @@ import { PublicRoute } from './PublicRoute';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const Home = lazy(() => import('../pages/Home/Home'));
-const Contacts = lazy(() => import('../pages/Contacts/Contacts'));
-const Register = lazy(() => import('../pages/Register/Register'));
-const LogIn = lazy(() => import('../pages/LogIn/LogIn'));
-const NotFound = lazy(() => import('../pages/NotFound/NotFound'));
+const Home = lazy(() => import('pages/Home/Home'));
+const Contacts = lazy(() => import('pages/Contacts/Contacts'));
+const Register = lazy(() => import('pages/Register/Register'));
+const LogIn = lazy(() => import('pages/LogIn/LogIn'));
+const NotFound = lazy(() => import('pages/NotFound/NotFound'));
 
 export const App = () => {
   const dispatch = useDispatch();
