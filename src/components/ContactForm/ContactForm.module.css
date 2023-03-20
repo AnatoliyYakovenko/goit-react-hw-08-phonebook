@@ -1,29 +1,66 @@
-.form {
+.phonebook__form {
   display: flex;
-  justify-content: center;
   flex-direction: column;
-  gap: 15px;
-}
-.inputName {
-  padding: 5px;
-  width: 100%;
+  align-items: center;
+
+  width: 300px;
+  height: calc(100vh - 175px);
+  padding: 30px 20px;
+  border: 1px solid black;
   border-radius: 5px;
+  background-color: white;
+  color: #232323;
+  box-shadow: 0px 2px 4px 0px rgba(1, 10, 64, 0.58);
 }
-.inputNumber {
-  padding: 5px;
-  width: 100%;
-  border-radius: 5px;
+
+.phonebook__label {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 15px;
+  margin-left: 10px;
+  align-self: flex-start;
 }
-.buttonEditor {
-  text-align: center;
-  width: 150px;
-  padding: 5px;
-  border-radius: 5px;
-  background-color: aqua;
+
+.icon {
+  margin-right: 5px;
+  margin-bottom: -2px;
+}
+
+.phonebook__input {
+  width: 285px;
+  margin-bottom: 15px;
+  padding: 4px;
+  border: 0.3px solid rgba(1, 10, 64, 0.58);
+  border-radius: 3px;
+  background-color: rgba(197, 234, 255, 0.418);
+  font-size: 18px;
+}
+
+.phonebook__input:focus {
+  box-shadow: 1px 3px 3px rgba(0, 0, 0, 0.3);
+}
+
+.phonebook__input:last-of-type {
+  margin-bottom: 0;
+}
+
+.phonebook__button {
+  width: 125px;
+  padding: 10px 15px;
+  margin-top: 30px;
+  background-color: lightseagreen;
+  color: wheat;
   border: none;
+  border-radius: 15px;
   cursor: pointer;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.buttonEditor:hover {
-  background-color: rgb(4, 114, 114);
-  color: white;
+
+.phonebook__button:hover {
+  background-color: blue;
+  color: lightskyblue;
+  box-shadow: 1px 3px 3px rgba(0, 0, 0, 0.3);
 }

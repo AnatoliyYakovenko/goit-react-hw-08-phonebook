@@ -1,87 +1,98 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addContact } from "redux/operations";
+import { selectContacts } from "redux/selectors";
+import { BsPersonCircle, BsFillTelephoneFill } from "react-icons/bs";
 import { toast } from 'react-toastify';
-import Button from '@mui/material';
 import css from './ContactForm.module.css';
-import { getContacts } from "redux/selectors";
 
-export const ContactForm = ({onSubmit}) => {
-  const [name, setName] = useState('');
-  const [phone, setPhone] = useState('');
-  const { items } = useSelector(getContacts);
-  const contactsNames = items.map(contact => contact.name);
-  const dispatch = useDispatch();
+export const ContactForm = () => {
+    const [name, setName] = useState('');
+    const [number, setNumber] = useState('');
+    const { items } = useSelector(selectContacts);
+    const contactsNames = items.map(contact => contact.name);
+    const dispatch = useDispatch();
 
-
-  const handleChange = e => {
-    const { name, value } = e.target;
-    switch (name){
-      case 'name':
-        setName(value);
-        break;
-      case 'phone':
-        setPhone(value);
-        break;
-        default:
-          return;
+    const handleInputChange = event => {
+        const { name, value } = event.currentTarget;
+        switch (name) {
+            case 'name':
+                setName(value);
+                break;
+            case 'number':
+                setNumber(value);
+                break;
+            default:
+                return;
+        };
     };
-  };
 
-  const handleSubmit = e => {
-    e.preventDefault();
-    const newContact = {
-      name,
-      phone,
-  };
+    const handleFormSubmit = event => {
+        event.preventDefault();
+        const newContact = {
+            name,
+            number,
+        };
 
-  if(contactsNames.includes(name)) {
-      toast.error(`${name} is already in contacts.`);
-      return;
-  } else {
-      dispatch(addContact(newContact));
-  }
-    resetForm();
-  };
+        if(contactsNames.includes(name)) {
+            toast.error(`${name} is already in contacts.`);
+            return;
+        } else {
+            dispatch(addContact(newContact));
+        }
+        reset();
+    }
 
-  const resetForm = () => {
-    setName('');
-    setPhone('');
-  };
+    const reset = () => {
+        setName('');
+        setNumber('');
+    };
 
-    return (
-      <form
-        className={css.form}
-        onSubmit={handleSubmit}>
-        <label>
-          Name
-          <input
-            className={css.inputName}
-            value={name}
-            onChange={handleChange}
-            type="text"
-            name="name"
-            pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-            title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
-            required
-          />
-        </label>
-        <label>
-          Phone number
-          <input
-            className={css.inputNumber}
-            value={phone}
-            onChange={handleChange}
-            type="tel"
-            name="phone"
-            pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
-            title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
-            required
-          />
-        </label>
-        <Button variant="contained" color="success" type="submit" className={css.buttonEditor}>
-          Add contact
-          </Button>
-      </form>
-    );
-}
+        return (
+            <form
+                className={css.phonebook__form}
+                onSubmit={handleFormSubmit}
+            >
+                <label
+                    htmlFor="nameInputId"
+                    className={css.phonebook__label}
+                >
+                    <BsPersonCircle className={css.icon} /> Name
+                </label>
+                <input
+                    type="text"
+                    name="name"
+                    pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+                    title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
+                    id="nameInputId"
+                    required
+                    onChange={handleInputChange}
+                    className={css.phonebook__input}
+                    value={name}
+                />
+                <label
+                    htmlFor="telInputId"
+                    className={css.phonebook__label}
+                >
+                    <BsFillTelephoneFill className={css.icon} /> Number
+                </label>
+                < input
+                    type="tel"
+                    name="number"
+                    pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
+                    title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
+                    id="telInputId"
+                    required
+                    onChange={handleInputChange}
+                    className={css.phonebook__input}
+                    value={number}
+                />
+                <button
+                    type="submit"
+                    className={css.phonebook__button}
+                >
+                    Add Contact
+                </button>
+            </form>
+        )
+    };
