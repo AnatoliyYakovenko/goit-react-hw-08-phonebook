@@ -6,7 +6,7 @@ import { HiOutlineMail } from 'react-icons/hi';
 import { RiLockPasswordLine } from 'react-icons/ri';
 import css from './LogInForm.module.css';
 
-export const LogInForm = () => {
+export default function LogInForm(){
     const dispatch = useDispatch();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');

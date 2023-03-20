@@ -1,4 +1,4 @@
-import { LogInForm } from 'components/LogInForm/LogInForm';
+import LogInForm from 'components/LogInForm/LogInForm';
 import css from './LogIn.module.css';
 
 const LogIn = () => {
