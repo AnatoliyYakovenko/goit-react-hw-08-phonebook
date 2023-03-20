@@ -1,5 +1,3 @@
-
-
 import { useSelector } from 'react-redux';
 import { selectUserName } from 'redux/auth/authSelectors';
 import { Link } from 'react-router-dom';
