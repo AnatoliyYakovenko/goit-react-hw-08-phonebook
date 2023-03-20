@@ -48,8 +48,8 @@
   width: 125px;
   padding: 10px 15px;
   margin-top: 30px;
-  background-color: lightseagreen;
-  color: wheat;
+  background-color: #2196f3;
+  color: white;
   border: none;
   border-radius: 15px;
   cursor: pointer;
@@ -61,6 +61,6 @@
 
 .phonebook__button:hover {
   background-color: blue;
-  color: lightskyblue;
+  color: white;
   box-shadow: 1px 3px 3px rgba(0, 0, 0, 0.3);
 }

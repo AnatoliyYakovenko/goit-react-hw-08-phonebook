@@ -7,6 +7,10 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  background: rgb(175, 176, 177);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 code {

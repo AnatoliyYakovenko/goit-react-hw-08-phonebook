@@ -12,7 +12,7 @@ export const LoginSuccess = () => {
         <div className={css.success}>
             <h2 className={css.title}>Welcome, {name}!</h2>
             <p className={css.notification}>
-                You can now go to your <Link to={"/contacts"} className={css.link}>Contact list</Link>.
+                You have access to your <Link to={"/contacts"} className={css.link}>Contact list</Link>.
             </p>
         </div>
     )

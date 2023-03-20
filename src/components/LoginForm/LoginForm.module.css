@@ -1,8 +1,7 @@
 .title {
   text-align: center;
   font-size: 30px;
-  color: white;
-  text-shadow: 1px 1px 1px rgb(51, 24, 124);
+  color: #232323;
 }
 
 .logInForm {
@@ -62,7 +61,7 @@
   width: 125px;
   padding: 10px 15px;
   margin-top: 15px;
-  background-color: blue;
+  background-color: #2196f3;
   color: white;
   border: none;
   border-radius: 15px;
@@ -75,24 +74,22 @@
 
 .submitBtn:hover,
 .submitBtn:focus {
-  background-color: var(--active-blue);
-  color: var(--active-button-text-color);
+  background-color: lightskyblue;
+  color: black;
   box-shadow: 1px 3px 3px rgba(0, 0, 0, 0.3);
 }
 
 .notice {
   text-align: center;
   font-size: 20px;
-  color: white;
-  text-shadow: 1px 1px 1px rgb(51, 24, 124);
+  color: #232323;
 }
 
 .link {
   font-weight: 700;
-  color: white;
+  color: darkblue;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    text-decoration 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    text-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    text-decoration 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .link:hover,

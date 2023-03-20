@@ -36,7 +36,7 @@ export const LogInForm = () => {
 
     return (
         <>
-            <h2 className={css.title}>Sign in below</h2>
+            <h2 className={css.title}>Sign in</h2>
             <form className={css.logInForm} onSubmit={handleSubmit}>
                 <ul className={css.list}>
                     <li className={css.listItem}>
@@ -76,7 +76,7 @@ export const LogInForm = () => {
                 </ul>
                 <button type='submit' className={css.submitBtn}>Sign In</button>
             </form>
-            <h3 className={css.notice}>Don't have an account yet? <Link to={"/register"} className={css.link}>Sign up here!</Link></h3>
+            <h3 className={css.notice}>If you don't have an account yet? <Link to={"/register"} className={css.link}>Sign up here!</Link></h3>
         </>
     );
 }
